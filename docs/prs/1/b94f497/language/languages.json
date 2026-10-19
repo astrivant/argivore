@@ -1,0 +1,516 @@
+{
+  "measurement": {
+    "base": "7a05bd7022d5047a4daeed527c14716f9f7705a3",
+    "merge_base": "7a05bd7022d5047a4daeed527c14716f9f7705a3",
+    "head": "b94f4976b718c66bc211aad4cf00055de6df7004",
+    "classifier": "Pygments 2.21.0",
+    "deltas": [
+      {
+        "before": ".github/CODEOWNERS",
+        "after": ".github/CODEOWNERS",
+        "added": 15,
+        "deleted": 0
+      },
+      {
+        "before": ".github/actions/setup/action.yml",
+        "after": ".github/actions/setup/action.yml",
+        "added": 24,
+        "deleted": 0
+      },
+      {
+        "before": ".github/dependabot.yml",
+        "after": ".github/dependabot.yml",
+        "added": 17,
+        "deleted": 0
+      },
+      {
+        "before": ".github/generated-artifacts.json",
+        "after": ".github/generated-artifacts.json",
+        "added": 13,
+        "deleted": 0
+      },
+      {
+        "before": ".github/release-notes.json",
+        "after": ".github/release-notes.json",
+        "added": 3,
+        "deleted": 0
+      },
+      {
+        "before": ".github/settings.yml",
+        "after": ".github/settings.yml",
+        "added": 63,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/ci.yml",
+        "after": ".github/workflows/ci.yml",
+        "added": 94,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-build.yml",
+        "after": ".github/workflows/stage-build.yml",
+        "added": 31,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-checks.yml",
+        "after": ".github/workflows/stage-checks.yml",
+        "added": 30,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-coverage.yml",
+        "after": ".github/workflows/stage-coverage.yml",
+        "added": 32,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-release.yml",
+        "after": ".github/workflows/stage-release.yml",
+        "added": 110,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-repair.yml",
+        "after": ".github/workflows/stage-repair.yml",
+        "added": 34,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-tests.yml",
+        "after": ".github/workflows/stage-tests.yml",
+        "added": 41,
+        "deleted": 0
+      },
+      {
+        "before": ".gitignore",
+        "after": ".gitignore",
+        "added": 354,
+        "deleted": 0
+      },
+      {
+        "before": ".node-version",
+        "after": ".node-version",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": ".pre-commit-config.yaml",
+        "after": ".pre-commit-config.yaml",
+        "added": 102,
+        "deleted": 0
+      },
+      {
+        "before": ".python-version",
+        "after": ".python-version",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": "LICENSE",
+        "after": "LICENSE",
+        "added": 202,
+        "deleted": 0
+      },
+      {
+        "before": "NOTICE",
+        "after": "NOTICE",
+        "added": 7,
+        "deleted": 0
+      },
+      {
+        "before": "README.md",
+        "after": "README.md",
+        "added": 105,
+        "deleted": 1
+      },
+      {
+        "before": "SKILL.md",
+        "after": "SKILL.md",
+        "added": 33,
+        "deleted": 0
+      },
+      {
+        "before": "docs/api.md",
+        "after": "docs/api.md",
+        "added": 73,
+        "deleted": 0
+      },
+      {
+        "before": "docs/development.md",
+        "after": "docs/development.md",
+        "added": 51,
+        "deleted": 0
+      },
+      {
+        "before": "docs/releases.md",
+        "after": "docs/releases.md",
+        "added": 62,
+        "deleted": 0
+      },
+      {
+        "before": "docs/repository-review.md",
+        "after": "docs/repository-review.md",
+        "added": 33,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/__init__.py",
+        "after": "pkg/argivore/__init__.py",
+        "added": 11,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/__main__.py",
+        "after": "pkg/argivore/__main__.py",
+        "added": 9,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/cli.py",
+        "after": "pkg/argivore/cli.py",
+        "added": 76,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/commands.py",
+        "after": "pkg/argivore/commands.py",
+        "added": 162,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/errors.py",
+        "after": "pkg/argivore/errors.py",
+        "added": 19,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/handlers.py",
+        "after": "pkg/argivore/handlers.py",
+        "added": 136,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/py.typed",
+        "after": "pkg/argivore/py.typed",
+        "added": 0,
+        "deleted": 0
+      },
+      {
+        "before": "poetry.lock",
+        "after": "poetry.lock",
+        "added": 2369,
+        "deleted": 0
+      },
+      {
+        "before": "pyproject.toml",
+        "after": "pyproject.toml",
+        "added": 122,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/NOTICE.md",
+        "after": "scripts/NOTICE.md",
+        "added": 18,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/Polyad.LICENSE",
+        "after": "scripts/Polyad.LICENSE",
+        "added": 89,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/__init__.py",
+        "after": "scripts/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/ci/__init__.py",
+        "after": "scripts/ci/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/ci/check-distribution.py",
+        "after": "scripts/ci/check-distribution.py",
+        "added": 147,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/coverage-badge.mjs",
+        "after": "scripts/coverage/coverage-badge.mjs",
+        "added": 50,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/coverage.test.mjs",
+        "after": "scripts/coverage/coverage.test.mjs",
+        "added": 129,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/publish-coverage.mjs",
+        "after": "scripts/coverage/publish-coverage.mjs",
+        "added": 65,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/check-markdown.mjs",
+        "after": "scripts/documentation/check-markdown.mjs",
+        "added": 112,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/check-markdown.test.mjs",
+        "after": "scripts/documentation/check-markdown.test.mjs",
+        "added": 58,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/eslint.config.mjs",
+        "after": "scripts/documentation/eslint.config.mjs",
+        "added": 7,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/lint-markdown.mjs",
+        "after": "scripts/documentation/lint-markdown.mjs",
+        "added": 59,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/lint-markdown.test.mjs",
+        "after": "scripts/documentation/lint-markdown.test.mjs",
+        "added": 23,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/markdown-checks.LICENSE",
+        "after": "scripts/documentation/markdown-checks.LICENSE",
+        "added": 202,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/package-lock.json",
+        "after": "scripts/documentation/package-lock.json",
+        "added": 4316,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/package.json",
+        "after": "scripts/documentation/package.json",
+        "added": 30,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/update-contents.py",
+        "after": "scripts/documentation/update-contents.py",
+        "added": 158,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/__init__.py",
+        "after": "scripts/release/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/attest.py",
+        "after": "scripts/release/attest.py",
+        "added": 213,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/feedback.cjs",
+        "after": "scripts/release/feedback.cjs",
+        "added": 97,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/feedback.test.cjs",
+        "after": "scripts/release/feedback.test.cjs",
+        "added": 109,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/publish.sh",
+        "after": "scripts/release/publish.sh",
+        "added": 48,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/setup-signing.sh",
+        "after": "scripts/release/setup-signing.sh",
+        "added": 75,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/signing-config.json",
+        "after": "scripts/release/signing-config.json",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/upload.py",
+        "after": "scripts/release/upload.py",
+        "added": 40,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/verify-published.sh",
+        "after": "scripts/release/verify-published.sh",
+        "added": 21,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/verify-registry.py",
+        "after": "scripts/release/verify-registry.py",
+        "added": 61,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/version.py",
+        "after": "scripts/release/version.py",
+        "added": 32,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/__init__.py",
+        "after": "scripts/repair/__init__.py",
+        "added": 3,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/plan.py",
+        "after": "scripts/repair/plan.py",
+        "added": 365,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/repair.mjs",
+        "after": "scripts/repair/repair.mjs",
+        "added": 98,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/repair.test.mjs",
+        "after": "scripts/repair/repair.test.mjs",
+        "added": 143,
+        "deleted": 0
+      },
+      {
+        "before": "tests/__init__.py",
+        "after": "tests/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/__init__.py",
+        "after": "tests/fixtures/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/lazy_runner.py",
+        "after": "tests/fixtures/lazy_runner.py",
+        "added": 42,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/lazy_runtime.py",
+        "after": "tests/fixtures/lazy_runtime.py",
+        "added": 28,
+        "deleted": 0
+      },
+      {
+        "before": "tests/test_commands.py",
+        "after": "tests/test_commands.py",
+        "added": 321,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/__init__.py",
+        "after": "tests/tooling/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_distribution_notices.py",
+        "after": "tests/tooling/test_distribution_notices.py",
+        "added": 73,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_documentation_contents.py",
+        "after": "tests/tooling/test_documentation_contents.py",
+        "added": 275,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_generated_repair.py",
+        "after": "tests/tooling/test_generated_repair.py",
+        "added": 305,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_release_attestation.py",
+        "after": "tests/tooling/test_release_attestation.py",
+        "added": 80,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_workflow_boundaries.py",
+        "after": "tests/tooling/test_workflow_boundaries.py",
+        "added": 159,
+        "deleted": 0
+      }
+    ],
+    "shares": [
+      {
+        "language": "JSON",
+        "added": 4363,
+        "deleted": 0
+      },
+      {
+        "language": "Python",
+        "added": 2745,
+        "deleted": 0
+      },
+      {
+        "language": "TOML",
+        "added": 2491,
+        "deleted": 0
+      },
+      {
+        "language": "JavaScript",
+        "added": 950,
+        "deleted": 0
+      },
+      {
+        "language": "Unknown",
+        "added": 871,
+        "deleted": 0
+      },
+      {
+        "language": "YAML",
+        "added": 578,
+        "deleted": 0
+      },
+      {
+        "language": "Markdown",
+        "added": 375,
+        "deleted": 1
+      },
+      {
+        "language": "Bash",
+        "added": 144,
+        "deleted": 0
+      }
+    ]
+  },
+  "palette_sha256": "149d8efaef55c657d889c6507a76ecd624947bca2f37b3fa359841a21f2b5147",
+  "matplotlib": "3.11.2"
+}

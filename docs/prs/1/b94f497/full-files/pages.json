@@ -1,0 +1,138 @@
+{
+  "base": "7a05bd7022d5047a4daeed527c14716f9f7705a3",
+  "head": "b94f4976b718c66bc211aad4cf00055de6df7004",
+  "file_count": 77,
+  "pages": [
+    {
+      "image": "files-001.png",
+      "sha256": "7fb686e177621c3ef6b839c55ae97d79f8fc9af14afd778cd9af491a011cba17",
+      "files": [
+        "scripts/documentation/package-lock.json",
+        "poetry.lock",
+        "scripts/repair/plan.py",
+        ".gitignore",
+        "tests/test_commands.py",
+        "tests/tooling/test_generated_repair.py",
+        "tests/tooling/test_documentation_contents.py",
+        "scripts/release/attest.py",
+        "LICENSE",
+        "scripts/documentation/markdown-checks.LICENSE"
+      ]
+    },
+    {
+      "image": "files-002.png",
+      "sha256": "5ba1564265de8991501ea703037f82dfc51adc701b8b4ea0f38e79a911b104c7",
+      "files": [
+        "pkg/argivore/commands.py",
+        "tests/tooling/test_workflow_boundaries.py",
+        "scripts/documentation/update-contents.py",
+        "scripts/ci/check-distribution.py",
+        "scripts/repair/repair.test.mjs",
+        "pkg/argivore/handlers.py",
+        "scripts/coverage/coverage.test.mjs",
+        "pyproject.toml",
+        "scripts/documentation/check-markdown.mjs",
+        ".github/workflows/stage-release.yml"
+      ]
+    },
+    {
+      "image": "files-003.png",
+      "sha256": "d8591c02790b7b15165dac0cf91397548d38101077933baca3235d432f24f1a4",
+      "files": [
+        "scripts/release/feedback.test.cjs",
+        "README.md",
+        ".pre-commit-config.yaml",
+        "scripts/repair/repair.mjs",
+        "scripts/release/feedback.cjs",
+        ".github/workflows/ci.yml",
+        "scripts/Polyad.LICENSE",
+        "tests/tooling/test_release_attestation.py",
+        "pkg/argivore/cli.py",
+        "scripts/release/setup-signing.sh"
+      ]
+    },
+    {
+      "image": "files-004.png",
+      "sha256": "1a7e22e158cdf5df80b9343524a7f1f363b94854e22847339c5930c48cb4e912",
+      "files": [
+        "docs/api.md",
+        "tests/tooling/test_distribution_notices.py",
+        "scripts/coverage/publish-coverage.mjs",
+        ".github/settings.yml",
+        "docs/releases.md",
+        "scripts/release/verify-registry.py",
+        "scripts/documentation/lint-markdown.mjs",
+        "scripts/documentation/check-markdown.test.mjs",
+        "docs/development.md",
+        "scripts/coverage/coverage-badge.mjs"
+      ]
+    },
+    {
+      "image": "files-005.png",
+      "sha256": "8b0f2c3797d41e4b9feefff18b219b0825d2b37615c7355c2bce31a4b505c675",
+      "files": [
+        "scripts/release/publish.sh",
+        "tests/fixtures/lazy_runner.py",
+        ".github/workflows/stage-tests.yml",
+        "scripts/release/upload.py",
+        ".github/workflows/stage-repair.yml",
+        "SKILL.md",
+        "docs/repository-review.md",
+        ".github/workflows/stage-coverage.yml",
+        "scripts/release/version.py",
+        ".github/workflows/stage-build.yml"
+      ]
+    },
+    {
+      "image": "files-006.png",
+      "sha256": "77610119aa9524bd2658786d9b43f866f7a2d57d0e6ee6285574c0d47b4b2ac7",
+      "files": [
+        ".github/workflows/stage-checks.yml",
+        "scripts/documentation/package.json",
+        "tests/fixtures/lazy_runtime.py",
+        ".github/actions/setup/action.yml",
+        "scripts/documentation/lint-markdown.test.mjs",
+        "scripts/release/verify-published.sh",
+        "pkg/argivore/errors.py",
+        "scripts/NOTICE.md",
+        ".github/dependabot.yml",
+        ".github/CODEOWNERS"
+      ]
+    },
+    {
+      "image": "files-007.png",
+      "sha256": "1d991259a7d45dbcba5c4d86130dd5f432ffa1b39ced4b9ee18b1ab9a1eb3bd1",
+      "files": [
+        ".github/generated-artifacts.json",
+        "pkg/argivore/__init__.py",
+        "pkg/argivore/__main__.py",
+        "NOTICE",
+        "scripts/documentation/eslint.config.mjs",
+        "scripts/__init__.py",
+        "scripts/ci/__init__.py",
+        "scripts/release/__init__.py",
+        "tests/__init__.py",
+        "tests/fixtures/__init__.py"
+      ]
+    },
+    {
+      "image": "files-008.png",
+      "sha256": "9862bc4f0bd67d7dc828f878aa3b63b2750091be7fc7f45d4a5c86de4b326dfb",
+      "files": [
+        "tests/tooling/__init__.py",
+        ".github/release-notes.json",
+        "scripts/repair/__init__.py",
+        ".node-version",
+        ".python-version",
+        "scripts/release/signing-config.json",
+        "pkg/argivore/py.typed"
+      ]
+    }
+  ],
+  "layout": {
+    "width": 7,
+    "height": 6.4,
+    "rows_per_page": 10,
+    "label_bar_overlap": false
+  }
+}

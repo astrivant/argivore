@@ -1,0 +1,1290 @@
+{
+  "inputs": {
+    "renderer/image_provenance/__init__.py": "4f6fbee00f2aaec7b9603b4501711ecad6481df8dea44c2061e59c80aef7fdd6",
+    "renderer/image_provenance/cli.py": "8bf7fd1726fc851d2b1c2f52b262886a7065b39cbe2934a77cc813119a447fc6",
+    "renderer/image_provenance/core.py": "19d15d127c0b30fff8d3c3ff19763375a0acbad3c3145b535d42af742e4e5e3f",
+    "renderer/pr_files/__init__.py": "8ba23c3c18fb2390baa4b588062636cc4c347be53500b388084edc94b81df1e0",
+    "renderer/pr_files/cli.py": "082d92c3c6ae5276fe035cb8de4fa28c993d33ee0e741993b361796d8bfa0525",
+    "renderer/pr_files/descriptions.py": "38f75acbd8a930cc9bdb82a6ba1537dc1bb77550a998924216262dec8dc8636d",
+    "renderer/pr_files/grouping.py": "f32cc09ecbca42a26a978c7e2dfa8aa36353cc2c0ae4c43a03faaaf51f9fc750",
+    "renderer/pr_files/models.py": "1543595d1fac65d569f225d02714c5ab13231753181ade47622a3fb515c97b5d",
+    "renderer/pr_files/plotting.py": "b76c9be9f537b3265d16288526bda395141bf4417687894769e9df08013443de",
+    "renderer/pr_intent/__init__.py": "0cc1ccc65f5e7f158bb61bbb067e64990a4e45763ce03e4747fe04200a09adfc",
+    "renderer/pr_intent/cli.py": "c3ff35519187c00b3cb4109676e4632ee9b09ce2405790e1d950112f71a57f7a",
+    "renderer/pr_intent/client.py": "ee8132f0c830e4514610cc1769c25eba126f02083f6aeb5ae6fefdde37ea8e67",
+    "renderer/pr_intent/graph.py": "487f8897e19e1cfc4b6ed9c0041746fc3c7170573bc732c296b03572270dd586",
+    "renderer/pr_intent/plotting.py": "38591921ebcc5d8a29a2e5b18c62404e283964498ed16b8924632626bad231f6",
+    "renderer/pr_intent/source.py": "a2043d3d78a91cd08e3f0c3c4b8398da680c15ca670ea393f417b90441ccf1cd",
+    "renderer/pr_language.py": "f837eab96ca93df61d4973d74a764e2fa59e6d08f76391c697d923c0e6792884",
+    "renderer/pr_presentation.py": "e1502b1ceea631fe8f631e65b55655a4d14613fd8eb2a885b1df44edc0f8982f",
+    "renderer/resources/fonts/EBGaramond-Regular.otf": "d3e1471a4a0f836716bad35326d3c0ab5caddb74ae5c1917f99f8225abf43a7d",
+    "renderer/resources/intent-result.schema.json": "19e00a10d5a159220f5035bd378da53110017ece9e6286aeb2438b858f01f9a4",
+    "renderer/review_paths/core.py": "6553e8d880e31810b37821d943391169205fdeeda537cfbe4cf009435044c444",
+    "environment/poetry.lock": "b91e0120da12337d51117c75a3acfb409b8a4203f9a524a58f68192699b9058d",
+    "data/palette": "149d8efaef55c657d889c6507a76ecd624947bca2f37b3fa359841a21f2b5147"
+  },
+  "source": {
+    "target": "7a05bd7022d5047a4daeed527c14716f9f7705a3",
+    "base": "7a05bd7022d5047a4daeed527c14716f9f7705a3",
+    "head": "b94f4976b718c66bc211aad4cf00055de6df7004",
+    "tree": "960047283f7d32516b39bd3bf8ca72101135c3ed",
+    "staged": false,
+    "deltas": [
+      {
+        "before": ".github/CODEOWNERS",
+        "after": ".github/CODEOWNERS",
+        "added": 15,
+        "deleted": 0
+      },
+      {
+        "before": ".github/actions/setup/action.yml",
+        "after": ".github/actions/setup/action.yml",
+        "added": 24,
+        "deleted": 0
+      },
+      {
+        "before": ".github/dependabot.yml",
+        "after": ".github/dependabot.yml",
+        "added": 17,
+        "deleted": 0
+      },
+      {
+        "before": ".github/generated-artifacts.json",
+        "after": ".github/generated-artifacts.json",
+        "added": 13,
+        "deleted": 0
+      },
+      {
+        "before": ".github/release-notes.json",
+        "after": ".github/release-notes.json",
+        "added": 3,
+        "deleted": 0
+      },
+      {
+        "before": ".github/settings.yml",
+        "after": ".github/settings.yml",
+        "added": 63,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/ci.yml",
+        "after": ".github/workflows/ci.yml",
+        "added": 94,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-build.yml",
+        "after": ".github/workflows/stage-build.yml",
+        "added": 31,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-checks.yml",
+        "after": ".github/workflows/stage-checks.yml",
+        "added": 30,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-coverage.yml",
+        "after": ".github/workflows/stage-coverage.yml",
+        "added": 32,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-release.yml",
+        "after": ".github/workflows/stage-release.yml",
+        "added": 110,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-repair.yml",
+        "after": ".github/workflows/stage-repair.yml",
+        "added": 34,
+        "deleted": 0
+      },
+      {
+        "before": ".github/workflows/stage-tests.yml",
+        "after": ".github/workflows/stage-tests.yml",
+        "added": 41,
+        "deleted": 0
+      },
+      {
+        "before": ".gitignore",
+        "after": ".gitignore",
+        "added": 354,
+        "deleted": 0
+      },
+      {
+        "before": ".node-version",
+        "after": ".node-version",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": ".pre-commit-config.yaml",
+        "after": ".pre-commit-config.yaml",
+        "added": 102,
+        "deleted": 0
+      },
+      {
+        "before": ".python-version",
+        "after": ".python-version",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": "LICENSE",
+        "after": "LICENSE",
+        "added": 202,
+        "deleted": 0
+      },
+      {
+        "before": "NOTICE",
+        "after": "NOTICE",
+        "added": 7,
+        "deleted": 0
+      },
+      {
+        "before": "README.md",
+        "after": "README.md",
+        "added": 105,
+        "deleted": 1
+      },
+      {
+        "before": "SKILL.md",
+        "after": "SKILL.md",
+        "added": 33,
+        "deleted": 0
+      },
+      {
+        "before": "docs/api.md",
+        "after": "docs/api.md",
+        "added": 73,
+        "deleted": 0
+      },
+      {
+        "before": "docs/development.md",
+        "after": "docs/development.md",
+        "added": 51,
+        "deleted": 0
+      },
+      {
+        "before": "docs/releases.md",
+        "after": "docs/releases.md",
+        "added": 62,
+        "deleted": 0
+      },
+      {
+        "before": "docs/repository-review.md",
+        "after": "docs/repository-review.md",
+        "added": 33,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/__init__.py",
+        "after": "pkg/argivore/__init__.py",
+        "added": 11,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/__main__.py",
+        "after": "pkg/argivore/__main__.py",
+        "added": 9,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/cli.py",
+        "after": "pkg/argivore/cli.py",
+        "added": 76,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/commands.py",
+        "after": "pkg/argivore/commands.py",
+        "added": 162,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/errors.py",
+        "after": "pkg/argivore/errors.py",
+        "added": 19,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/handlers.py",
+        "after": "pkg/argivore/handlers.py",
+        "added": 136,
+        "deleted": 0
+      },
+      {
+        "before": "pkg/argivore/py.typed",
+        "after": "pkg/argivore/py.typed",
+        "added": 0,
+        "deleted": 0
+      },
+      {
+        "before": "poetry.lock",
+        "after": "poetry.lock",
+        "added": 2369,
+        "deleted": 0
+      },
+      {
+        "before": "pyproject.toml",
+        "after": "pyproject.toml",
+        "added": 122,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/NOTICE.md",
+        "after": "scripts/NOTICE.md",
+        "added": 18,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/Polyad.LICENSE",
+        "after": "scripts/Polyad.LICENSE",
+        "added": 89,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/__init__.py",
+        "after": "scripts/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/ci/__init__.py",
+        "after": "scripts/ci/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/ci/check-distribution.py",
+        "after": "scripts/ci/check-distribution.py",
+        "added": 147,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/coverage-badge.mjs",
+        "after": "scripts/coverage/coverage-badge.mjs",
+        "added": 50,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/coverage.test.mjs",
+        "after": "scripts/coverage/coverage.test.mjs",
+        "added": 129,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/coverage/publish-coverage.mjs",
+        "after": "scripts/coverage/publish-coverage.mjs",
+        "added": 65,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/check-markdown.mjs",
+        "after": "scripts/documentation/check-markdown.mjs",
+        "added": 112,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/check-markdown.test.mjs",
+        "after": "scripts/documentation/check-markdown.test.mjs",
+        "added": 58,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/eslint.config.mjs",
+        "after": "scripts/documentation/eslint.config.mjs",
+        "added": 7,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/lint-markdown.mjs",
+        "after": "scripts/documentation/lint-markdown.mjs",
+        "added": 59,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/lint-markdown.test.mjs",
+        "after": "scripts/documentation/lint-markdown.test.mjs",
+        "added": 23,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/markdown-checks.LICENSE",
+        "after": "scripts/documentation/markdown-checks.LICENSE",
+        "added": 202,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/package-lock.json",
+        "after": "scripts/documentation/package-lock.json",
+        "added": 4316,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/package.json",
+        "after": "scripts/documentation/package.json",
+        "added": 30,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/documentation/update-contents.py",
+        "after": "scripts/documentation/update-contents.py",
+        "added": 158,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/__init__.py",
+        "after": "scripts/release/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/attest.py",
+        "after": "scripts/release/attest.py",
+        "added": 213,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/feedback.cjs",
+        "after": "scripts/release/feedback.cjs",
+        "added": 97,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/feedback.test.cjs",
+        "after": "scripts/release/feedback.test.cjs",
+        "added": 109,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/publish.sh",
+        "after": "scripts/release/publish.sh",
+        "added": 48,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/setup-signing.sh",
+        "after": "scripts/release/setup-signing.sh",
+        "added": 75,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/signing-config.json",
+        "after": "scripts/release/signing-config.json",
+        "added": 1,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/upload.py",
+        "after": "scripts/release/upload.py",
+        "added": 40,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/verify-published.sh",
+        "after": "scripts/release/verify-published.sh",
+        "added": 21,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/verify-registry.py",
+        "after": "scripts/release/verify-registry.py",
+        "added": 61,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/release/version.py",
+        "after": "scripts/release/version.py",
+        "added": 32,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/__init__.py",
+        "after": "scripts/repair/__init__.py",
+        "added": 3,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/plan.py",
+        "after": "scripts/repair/plan.py",
+        "added": 365,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/repair.mjs",
+        "after": "scripts/repair/repair.mjs",
+        "added": 98,
+        "deleted": 0
+      },
+      {
+        "before": "scripts/repair/repair.test.mjs",
+        "after": "scripts/repair/repair.test.mjs",
+        "added": 143,
+        "deleted": 0
+      },
+      {
+        "before": "tests/__init__.py",
+        "after": "tests/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/__init__.py",
+        "after": "tests/fixtures/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/lazy_runner.py",
+        "after": "tests/fixtures/lazy_runner.py",
+        "added": 42,
+        "deleted": 0
+      },
+      {
+        "before": "tests/fixtures/lazy_runtime.py",
+        "after": "tests/fixtures/lazy_runtime.py",
+        "added": 28,
+        "deleted": 0
+      },
+      {
+        "before": "tests/test_commands.py",
+        "after": "tests/test_commands.py",
+        "added": 321,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/__init__.py",
+        "after": "tests/tooling/__init__.py",
+        "added": 5,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_distribution_notices.py",
+        "after": "tests/tooling/test_distribution_notices.py",
+        "added": 73,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_documentation_contents.py",
+        "after": "tests/tooling/test_documentation_contents.py",
+        "added": 275,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_generated_repair.py",
+        "after": "tests/tooling/test_generated_repair.py",
+        "added": 305,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_release_attestation.py",
+        "after": "tests/tooling/test_release_attestation.py",
+        "added": 80,
+        "deleted": 0
+      },
+      {
+        "before": "tests/tooling/test_workflow_boundaries.py",
+        "after": "tests/tooling/test_workflow_boundaries.py",
+        "added": 159,
+        "deleted": 0
+      }
+    ]
+  },
+  "view": {
+    "nodes": [
+      {
+        "id": "F1",
+        "label": ".github/CODEOWNERS",
+        "kind": "file",
+        "status": "changed",
+        "weight": 15.0,
+        "group": ".github",
+        "context": false
+      },
+      {
+        "id": "F2",
+        "label": ".github/actions/setup/action.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 24.0,
+        "group": ".github/actions/setup",
+        "context": false
+      },
+      {
+        "id": "F3",
+        "label": ".github/dependabot.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 17.0,
+        "group": ".github",
+        "context": false
+      },
+      {
+        "id": "F4",
+        "label": ".github/generated-artifacts.json",
+        "kind": "file",
+        "status": "changed",
+        "weight": 13.0,
+        "group": ".github",
+        "context": false
+      },
+      {
+        "id": "F5",
+        "label": ".github/release-notes.json",
+        "kind": "file",
+        "status": "changed",
+        "weight": 3.0,
+        "group": ".github",
+        "context": false
+      },
+      {
+        "id": "F6",
+        "label": ".github/settings.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 63.0,
+        "group": ".github",
+        "context": false
+      },
+      {
+        "id": "F7",
+        "label": ".github/workflows/ci.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 94.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F8",
+        "label": ".github/workflows/stage-build.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 31.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F9",
+        "label": ".github/workflows/stage-checks.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 30.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F10",
+        "label": ".github/workflows/stage-coverage.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 32.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F11",
+        "label": ".github/workflows/stage-release.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 110.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F12",
+        "label": ".github/workflows/stage-repair.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 34.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F13",
+        "label": ".github/workflows/stage-tests.yml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 41.0,
+        "group": ".github/workflows",
+        "context": false
+      },
+      {
+        "id": "F14",
+        "label": ".gitignore",
+        "kind": "file",
+        "status": "changed",
+        "weight": 354.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F15",
+        "label": ".node-version",
+        "kind": "file",
+        "status": "changed",
+        "weight": 1.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F16",
+        "label": ".pre-commit-config.yaml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 102.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F17",
+        "label": ".python-version",
+        "kind": "file",
+        "status": "changed",
+        "weight": 1.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F18",
+        "label": "LICENSE",
+        "kind": "file",
+        "status": "changed",
+        "weight": 202.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F19",
+        "label": "NOTICE",
+        "kind": "file",
+        "status": "changed",
+        "weight": 7.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F20",
+        "label": "README.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 106.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F21",
+        "label": "SKILL.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 33.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F22",
+        "label": "docs/api.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 73.0,
+        "group": "docs",
+        "context": false
+      },
+      {
+        "id": "F23",
+        "label": "docs/development.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 51.0,
+        "group": "docs",
+        "context": false
+      },
+      {
+        "id": "F24",
+        "label": "docs/releases.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 62.0,
+        "group": "docs",
+        "context": false
+      },
+      {
+        "id": "F25",
+        "label": "docs/repository-review.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 33.0,
+        "group": "docs",
+        "context": false
+      },
+      {
+        "id": "F26",
+        "label": "pkg/argivore/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 11.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F27",
+        "label": "pkg/argivore/__main__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 9.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F28",
+        "label": "pkg/argivore/cli.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 76.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F29",
+        "label": "pkg/argivore/commands.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 162.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F30",
+        "label": "pkg/argivore/errors.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 19.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F31",
+        "label": "pkg/argivore/handlers.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 136.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F32",
+        "label": "pkg/argivore/py.typed",
+        "kind": "file",
+        "status": "changed",
+        "weight": 1.0,
+        "group": "pkg/argivore",
+        "context": false
+      },
+      {
+        "id": "F33",
+        "label": "poetry.lock",
+        "kind": "file",
+        "status": "changed",
+        "weight": 2369.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F34",
+        "label": "pyproject.toml",
+        "kind": "file",
+        "status": "changed",
+        "weight": 122.0,
+        "group": ".",
+        "context": false
+      },
+      {
+        "id": "F35",
+        "label": "scripts/NOTICE.md",
+        "kind": "file",
+        "status": "changed",
+        "weight": 18.0,
+        "group": "scripts",
+        "context": false
+      },
+      {
+        "id": "F36",
+        "label": "scripts/Polyad.LICENSE",
+        "kind": "file",
+        "status": "changed",
+        "weight": 89.0,
+        "group": "scripts",
+        "context": false
+      },
+      {
+        "id": "F37",
+        "label": "scripts/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "scripts",
+        "context": false
+      },
+      {
+        "id": "F38",
+        "label": "scripts/ci/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "scripts/ci",
+        "context": false
+      },
+      {
+        "id": "F39",
+        "label": "scripts/ci/check-distribution.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 147.0,
+        "group": "scripts/ci",
+        "context": false
+      },
+      {
+        "id": "F40",
+        "label": "scripts/coverage/coverage-badge.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 50.0,
+        "group": "scripts/coverage",
+        "context": false
+      },
+      {
+        "id": "F41",
+        "label": "scripts/coverage/coverage.test.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 129.0,
+        "group": "scripts/coverage",
+        "context": false
+      },
+      {
+        "id": "F42",
+        "label": "scripts/coverage/publish-coverage.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 65.0,
+        "group": "scripts/coverage",
+        "context": false
+      },
+      {
+        "id": "F43",
+        "label": "scripts/documentation/check-markdown.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 112.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F44",
+        "label": "scripts/documentation/check-markdown.test.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 58.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F45",
+        "label": "scripts/documentation/eslint.config.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 7.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F46",
+        "label": "scripts/documentation/lint-markdown.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 59.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F47",
+        "label": "scripts/documentation/lint-markdown.test.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 23.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F48",
+        "label": "scripts/documentation/markdown-checks.LICENSE",
+        "kind": "file",
+        "status": "changed",
+        "weight": 202.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F49",
+        "label": "scripts/documentation/package-lock.json",
+        "kind": "file",
+        "status": "changed",
+        "weight": 4316.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F50",
+        "label": "scripts/documentation/package.json",
+        "kind": "file",
+        "status": "changed",
+        "weight": 30.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F51",
+        "label": "scripts/documentation/update-contents.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 158.0,
+        "group": "scripts/documentation",
+        "context": false
+      },
+      {
+        "id": "F52",
+        "label": "scripts/release/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F53",
+        "label": "scripts/release/attest.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 213.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F54",
+        "label": "scripts/release/feedback.cjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 97.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F55",
+        "label": "scripts/release/feedback.test.cjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 109.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F56",
+        "label": "scripts/release/publish.sh",
+        "kind": "file",
+        "status": "changed",
+        "weight": 48.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F57",
+        "label": "scripts/release/setup-signing.sh",
+        "kind": "file",
+        "status": "changed",
+        "weight": 75.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F58",
+        "label": "scripts/release/signing-config.json",
+        "kind": "file",
+        "status": "changed",
+        "weight": 1.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F59",
+        "label": "scripts/release/upload.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 40.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F60",
+        "label": "scripts/release/verify-published.sh",
+        "kind": "file",
+        "status": "changed",
+        "weight": 21.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F61",
+        "label": "scripts/release/verify-registry.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 61.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F62",
+        "label": "scripts/release/version.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 32.0,
+        "group": "scripts/release",
+        "context": false
+      },
+      {
+        "id": "F63",
+        "label": "scripts/repair/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 3.0,
+        "group": "scripts/repair",
+        "context": false
+      },
+      {
+        "id": "F64",
+        "label": "scripts/repair/plan.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 365.0,
+        "group": "scripts/repair",
+        "context": false
+      },
+      {
+        "id": "F65",
+        "label": "scripts/repair/repair.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 98.0,
+        "group": "scripts/repair",
+        "context": false
+      },
+      {
+        "id": "F66",
+        "label": "scripts/repair/repair.test.mjs",
+        "kind": "file",
+        "status": "changed",
+        "weight": 143.0,
+        "group": "scripts/repair",
+        "context": false
+      },
+      {
+        "id": "F67",
+        "label": "tests/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "tests",
+        "context": false
+      },
+      {
+        "id": "F68",
+        "label": "tests/fixtures/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "tests/fixtures",
+        "context": false
+      },
+      {
+        "id": "F69",
+        "label": "tests/fixtures/lazy_runner.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 42.0,
+        "group": "tests/fixtures",
+        "context": false
+      },
+      {
+        "id": "F70",
+        "label": "tests/fixtures/lazy_runtime.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 28.0,
+        "group": "tests/fixtures",
+        "context": false
+      },
+      {
+        "id": "F71",
+        "label": "tests/test_commands.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 321.0,
+        "group": "tests",
+        "context": false
+      },
+      {
+        "id": "F72",
+        "label": "tests/tooling/__init__.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 5.0,
+        "group": "tests/tooling",
+        "context": false
+      },
+      {
+        "id": "F73",
+        "label": "tests/tooling/test_distribution_notices.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 73.0,
+        "group": "tests/tooling",
+        "context": false
+      },
+      {
+        "id": "F74",
+        "label": "tests/tooling/test_documentation_contents.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 275.0,
+        "group": "tests/tooling",
+        "context": false
+      },
+      {
+        "id": "F75",
+        "label": "tests/tooling/test_generated_repair.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 305.0,
+        "group": "tests/tooling",
+        "context": false
+      },
+      {
+        "id": "F76",
+        "label": "tests/tooling/test_release_attestation.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 80.0,
+        "group": "tests/tooling",
+        "context": false
+      },
+      {
+        "id": "F77",
+        "label": "tests/tooling/test_workflow_boundaries.py",
+        "kind": "file",
+        "status": "changed",
+        "weight": 159.0,
+        "group": "tests/tooling",
+        "context": false
+      }
+    ],
+    "links": [],
+    "missing": [
+      ".github/CODEOWNERS",
+      ".github/actions/setup/action.yml",
+      ".github/dependabot.yml",
+      ".github/generated-artifacts.json",
+      ".github/release-notes.json",
+      ".github/settings.yml",
+      ".github/workflows/ci.yml",
+      ".github/workflows/stage-build.yml",
+      ".github/workflows/stage-checks.yml",
+      ".github/workflows/stage-coverage.yml",
+      ".github/workflows/stage-release.yml",
+      ".github/workflows/stage-repair.yml",
+      ".github/workflows/stage-tests.yml",
+      ".gitignore",
+      ".node-version",
+      ".pre-commit-config.yaml",
+      ".python-version",
+      "LICENSE",
+      "NOTICE",
+      "README.md",
+      "SKILL.md",
+      "docs/api.md",
+      "docs/development.md",
+      "docs/releases.md",
+      "docs/repository-review.md",
+      "pkg/argivore/__init__.py",
+      "pkg/argivore/__main__.py",
+      "pkg/argivore/cli.py",
+      "pkg/argivore/commands.py",
+      "pkg/argivore/errors.py",
+      "pkg/argivore/handlers.py",
+      "pkg/argivore/py.typed",
+      "poetry.lock",
+      "pyproject.toml",
+      "scripts/NOTICE.md",
+      "scripts/Polyad.LICENSE",
+      "scripts/__init__.py",
+      "scripts/ci/__init__.py",
+      "scripts/ci/check-distribution.py",
+      "scripts/coverage/coverage-badge.mjs",
+      "scripts/coverage/coverage.test.mjs",
+      "scripts/coverage/publish-coverage.mjs",
+      "scripts/documentation/check-markdown.mjs",
+      "scripts/documentation/check-markdown.test.mjs",
+      "scripts/documentation/eslint.config.mjs",
+      "scripts/documentation/lint-markdown.mjs",
+      "scripts/documentation/lint-markdown.test.mjs",
+      "scripts/documentation/markdown-checks.LICENSE",
+      "scripts/documentation/package-lock.json",
+      "scripts/documentation/package.json",
+      "scripts/documentation/update-contents.py",
+      "scripts/release/__init__.py",
+      "scripts/release/attest.py",
+      "scripts/release/feedback.cjs",
+      "scripts/release/feedback.test.cjs",
+      "scripts/release/publish.sh",
+      "scripts/release/setup-signing.sh",
+      "scripts/release/signing-config.json",
+      "scripts/release/upload.py",
+      "scripts/release/verify-published.sh",
+      "scripts/release/verify-registry.py",
+      "scripts/release/version.py",
+      "scripts/repair/__init__.py",
+      "scripts/repair/plan.py",
+      "scripts/repair/repair.mjs",
+      "scripts/repair/repair.test.mjs",
+      "tests/__init__.py",
+      "tests/fixtures/__init__.py",
+      "tests/fixtures/lazy_runner.py",
+      "tests/fixtures/lazy_runtime.py",
+      "tests/test_commands.py",
+      "tests/tooling/__init__.py",
+      "tests/tooling/test_distribution_notices.py",
+      "tests/tooling/test_documentation_contents.py",
+      "tests/tooling/test_generated_repair.py",
+      "tests/tooling/test_release_attestation.py",
+      "tests/tooling/test_workflow_boundaries.py"
+    ],
+    "state": "unavailable: no local intent export",
+    "graph_revision": "",
+    "input_sha256": "",
+    "omitted_dependencies": 0,
+    "omitted_evidence": 0
+  },
+  "palette_sha256": "149d8efaef55c657d889c6507a76ecd624947bca2f37b3fa359841a21f2b5147",
+  "seed": 1729,
+  "renderer": 1,
+  "implementation_sha256": "e603c51358c2f41a782f3032d3b991e666f304d89a8ad8f5e418f69a2c1096e5",
+  "matplotlib": "3.11.2",
+  "networkx": "3.7",
+  "numpy": "2.5.3",
+  "witful": "0.7.0",
+  "model_calls": 0,
+  "evaluated_at": null,
+  "image_sha256": "789903a5670127f03ea173fdcf612e688df46f6607fbd35252653244e8a66bf7"
+}
