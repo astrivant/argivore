@@ -16,6 +16,7 @@ documentation, package boundaries, local hooks, CI and release automation.
 | Public package | Strict typing, Google docstrings, explicit exports and `py.typed`; built wheel and source notices are checked before isolated installation. |
 | Dependencies | Python and JavaScript tools use committed locks; Actions use reviewed commit pins; weekly updates retain review. |
 | Documentation | Generated README contents, Markdown, Mermaid and math checks run locally and in CI. |
+| Project policies | Root CONTRIBUTING.md links the actual development and review workflow; SECURITY.md names the verified private reporting channel and supported versions. |
 | CI | Independent checks, tests and builds join at Required CI; generated repair uses trusted base code with an allowlist. |
 | Coverage | Runtime branch coverage has a 95% floor; main publishes measured line coverage with source and report digests. |
 | Publication | Signed tags, verified draft assets, PyPI byte agreement, independently trusted key fingerprint and immutable release acceptance. |

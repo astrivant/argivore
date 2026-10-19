@@ -98,6 +98,8 @@ to its source revision; its initial publication follows the first merge.
 [Signed releases](docs/releases.md) contain the wheel, source archive, checksums,
 signature bundles and source provenance. The [repository review](docs/repository-review.md)
 records the validation boundaries. [SKILL.md](SKILL.md) is the agent entrypoint.
+See [Contributing](CONTRIBUTING.md) for the review workflow and
+[Security](SECURITY.md) for private vulnerability reporting and version support.
 
 ## License
 
