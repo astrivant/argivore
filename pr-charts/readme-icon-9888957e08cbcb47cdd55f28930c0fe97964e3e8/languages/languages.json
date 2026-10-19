@@ -1,0 +1,31 @@
+{
+  "measurement": {
+    "base": "df10b10a7f7f204edb07c0306c1f4a6736125399",
+    "merge_base": "df10b10a7f7f204edb07c0306c1f4a6736125399",
+    "head": "9888957e08cbcb47cdd55f28930c0fe97964e3e8",
+    "classifier": "Pygments 2.21.0",
+    "deltas": [
+      {
+        "before": "README.md",
+        "after": "README.md",
+        "added": 2,
+        "deleted": 0
+      },
+      {
+        "before": "docs/assets/argivore-logo.png",
+        "after": "docs/assets/argivore-logo.png",
+        "added": null,
+        "deleted": null
+      }
+    ],
+    "shares": [
+      {
+        "language": "Markdown",
+        "added": 2,
+        "deleted": 0
+      }
+    ]
+  },
+  "palette_sha256": "149d8efaef55c657d889c6507a76ecd624947bca2f37b3fa359841a21f2b5147",
+  "matplotlib": "3.11.2"
+}
