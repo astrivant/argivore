@@ -1,0 +1,8 @@
+{
+  "source": "df10b10a7f7f204edb07c0306c1f4a6736125399",
+  "report_sha256": "8fb7d685c91fd5587855c140a2957119a5cdefdb30923a438ead32d5e646a78c",
+  "scope": "Argivore runtime package; tests omitted; line coverage",
+  "covered_lines": 109,
+  "num_statements": 112,
+  "percent_covered": 97.32142857142857
+}
