@@ -1,0 +1,7 @@
+Argivore
+Copyright 2026 Astrivant LLC
+
+The Python runtime is independently implemented under Apache-2.0.
+Development helpers retain their separate notices in scripts/NOTICE.md and
+are excluded from the installed wheel and source distribution.
+Each signed release binds its actual source revision in SOURCE.json.

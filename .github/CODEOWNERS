@@ -1,0 +1,15 @@
+# Review contact for the package and its maintained delivery surface.
+/.github/ @emmeowzing
+/docs/ @emmeowzing
+/pkg/ @emmeowzing
+/scripts/ @emmeowzing
+/tests/ @emmeowzing
+/*.md @emmeowzing
+/.gitignore @emmeowzing
+/.node-version @emmeowzing
+/.pre-commit-config.yaml @emmeowzing
+/.python-version @emmeowzing
+/LICENSE @emmeowzing
+/NOTICE @emmeowzing
+/poetry.lock @emmeowzing
+/pyproject.toml @emmeowzing

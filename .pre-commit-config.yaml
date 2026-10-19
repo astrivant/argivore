@@ -1,0 +1,102 @@
+default_install_hook_types: [pre-commit, pre-push]
+default_stages: [pre-commit]
+repos:
+  - repo: local
+    hooks:
+      - id: generated-inventory
+        name: Generated artifact inventory
+        entry: poetry run python -m scripts.repair.plan --check
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: ruff
+        name: Ruff lint
+        entry: poetry run ruff check
+        language: system
+        types: [python]
+      - id: ruff-format
+        name: Ruff format
+        entry: poetry run ruff format --check
+        language: system
+        types: [python]
+      - id: mypy
+        name: Strict Python types
+        entry: poetry run mypy
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: pydocstyle
+        name: Google docstring layout
+        entry: poetry run pydocstyle pkg scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: pydoclint
+        name: Typed docstring contracts
+        entry: poetry run pydoclint pkg scripts tests
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: codeowners-tree
+        name: Normalize CODEOWNERS tree
+        entry: poetry run ownerloom --write
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: codeowners-tree-push
+        name: Verify committed CODEOWNERS
+        entry: poetry run ownerloom --check --revision HEAD
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push]
+      - id: codeowners
+        name: CODEOWNERS syntax and paths
+        entry: env REPOSITORY_PATH=. CHECKS=files,duppatterns,syntax EXPERIMENTAL_CHECKS= CHECK_FAILURE_LEVEL=warning codeowners-validator
+        language: golang
+        language_version: 1.27.2
+        additional_dependencies: [github.com/mszostok/codeowners-validator@7f3f5e28c6d7b8dfae5731e54ce2272ca384592f]
+        pass_filenames: false
+        always_run: true
+      - id: documentation-contents
+        name: README tables of contents
+        entry: poetry run python scripts/documentation/update-contents.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: markdown
+        name: Markdown tables and structure
+        entry: npm --prefix scripts/documentation run markdown:lint
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: math-mermaid
+        name: Markdown math and Mermaid
+        entry: npm --prefix scripts/documentation run check
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: javascript
+        name: JavaScript lint
+        entry: npm --prefix scripts/documentation run lint
+        language: system
+        pass_filenames: false
+        files: '\.[cm]js$'
+      - id: shellcheck
+        name: ShellCheck
+        entry: poetry run shellcheck
+        language: system
+        types: [shell]
+      - id: shfmt
+        name: Shell formatting
+        entry: poetry run shfmt -d -i 4
+        language: system
+        types: [shell]
+      - id: actionlint
+        name: Workflow and embedded shell validation
+        entry: actionlint
+        language: golang
+        language_version: 1.27.2
+        additional_dependencies: [github.com/rhysd/actionlint/cmd/actionlint@v1.7.12]
+        pass_filenames: false
+        files: ^\.github/workflows/
