@@ -1,5 +1,7 @@
 # Argivore
 
+<img src="https://raw.githubusercontent.com/astrivant/argivore/main/docs/assets/argivore-logo.png" alt="Argivore logo: a green diamond face with square eyes and branches ending in a hexagon and triangle" width="33%">
+
 [![Measured runtime coverage](https://raw.githubusercontent.com/astrivant/argivore/coverage/badges/coverage.svg)](https://github.com/astrivant/argivore/blob/coverage/badges/coverage.json)
 
 Build nested Python CLIs from reusable command declarations. Argivore composes
