@@ -1,0 +1,30 @@
+name: Source checks
+on:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: ./.github/actions/setup
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version-file: .node-version
+          cache: npm
+          cache-dependency-path: scripts/documentation/package-lock.json
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9
+        with:
+          path: ~/.cache/pre-commit
+          key: hooks-${{ runner.os }}-${{ hashFiles('.pre-commit-config.yaml') }}
+      - run: npm ci --prefix scripts/documentation --no-fund --no-audit
+      - run: poetry check --lock
+      - run: poetry run pre-commit run --all-files --show-diff-on-failure
+      - run: poetry run python scripts/documentation/update-contents.py --check
+      - run: npm test --prefix scripts/documentation
+      - run: poetry run pip-audit --skip-editable
+      - run: npm audit --prefix scripts/documentation --audit-level=high

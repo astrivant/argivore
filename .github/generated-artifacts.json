@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "output": ".github/CODEOWNERS",
+      "inputs": [
+        ".github/CODEOWNERS"
+      ],
+      "renderer": "codeowners",
+      "reason": "Normalize literal ownership rules without changing owners or precedence."
+    }
+  ]
+}

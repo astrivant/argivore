@@ -1,0 +1,122 @@
+[project]
+name = "argivore"
+version = "0.0.1"
+description = "Compose reusable argparse command trees with lazy, typed dispatch"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+requires-python = ">=3.12,!=3.14.1,<4"
+dependencies = ["attrs>=26.1,<27"]
+authors = [{name = "Astrivant LLC"}]
+keywords = ["argparse", "cli", "subcommands", "builder", "command-line"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/argivore/"
+Repository = "https://github.com/astrivant/argivore"
+Documentation = "https://github.com/astrivant/argivore/tree/main/docs"
+Issues = "https://github.com/astrivant/argivore/issues"
+
+[project.scripts]
+argivore = "argivore.cli:main"
+
+[tool.poetry]
+packages = [{include = "argivore", from = "pkg"}]
+include = [{path = "pkg/argivore/py.typed", format = ["sdist", "wheel"]}]
+exclude = ["tests", "scripts", ".github", ".cache"]
+
+[build-system]
+requires = ["poetry-core==2.5.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+cache-dir = ".cache/ruff"
+src = ["pkg"]
+line-length = 140
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "D", "TC"]
+ignore = ["D200", "D202", "D212"]
+extend-select = ["D213"]
+
+[tool.ruff.lint.isort]
+required-imports = ["from __future__ import annotations"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+cache_dir = ".cache/mypy"
+python_version = "3.12"
+strict = true
+files = ["pkg", "tests", "scripts"]
+disallow_any_explicit = true
+disallow_any_unimported = true
+
+[tool.pydocstyle]
+convention = "google"
+add-ignore = ["D200", "D202", "D212"]
+add-select = ["D213"]
+match = ".*\\.py"
+match-dir = "^(?!node_modules$|\\.).*"
+
+[tool.pydoclint]
+style = "google"
+exclude = "node_modules|\\.venv|\\.cache"
+allow-init-docstring = true
+skip-checking-short-docstrings = false
+arg-type-hints-in-docstring = true
+arg-type-hints-in-signature = true
+check-return-types = true
+check-arg-order = true
+require-return-section-when-returning-nothing = true
+skip-checking-raises = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["pkg", "."]
+addopts = "-ra --import-mode=importlib"
+
+
+[dependency-groups]
+dev = [
+    "pytest==9.1.1",
+    "pytest-cov==7.1.0",
+    "pytest-xdist==3.8.0",
+    "hypothesis==6.170.1",
+    "ruff==0.17.1",
+    "mypy==2.4.0",
+    "pydocstyle==6.3.0",
+    "pydoclint==0.11.1",
+    "pre-commit==4.7.0",
+    "pip-audit==2.10.1",
+    "twine==7.0.0",
+    "pyyaml==6.0.3",
+    "types-pyyaml==6.0.12.20260906",
+    "shellcheck-py==0.11.0.1",
+    "shfmt-py==4.2.0",
+    "ownerloom==0.0.3",
+]
+
+[tool.coverage.run]
+source = ["argivore"]
+branch = true
+relative_files = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 95

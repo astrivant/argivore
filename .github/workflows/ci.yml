@@ -1,0 +1,94 @@
+name: CI
+on:
+  pull_request:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
+  schedule:
+    - cron: "43 7 * * 1"
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  checks:
+    if: github.event_name != 'pull_request_target' && github.event_name != 'schedule'
+    uses: ./.github/workflows/stage-checks.yml
+  tests:
+    if: github.event_name != 'pull_request_target' && github.event_name != 'schedule'
+    uses: ./.github/workflows/stage-tests.yml
+  build:
+    if: github.event_name != 'pull_request_target' && github.event_name != 'schedule'
+    uses: ./.github/workflows/stage-build.yml
+  required:
+    name: Required CI
+    needs: [checks, tests, build]
+    if: always() && github.event_name != 'pull_request_target' && github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Require every verification stage
+        env:
+          CHECKS: ${{ needs.checks.result }}
+          TESTS: ${{ needs.tests.result }}
+          BUILD: ${{ needs.build.result }}
+        run: |
+          for result in "$CHECKS" "$TESTS" "$BUILD"; do
+            [ "$result" = success ] || exit 1
+          done
+  coverage:
+    needs: [tests]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    uses: ./.github/workflows/stage-coverage.yml
+  release:
+    needs: [required]
+    if: "!cancelled() && needs.required.result == 'success' && github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')"
+    permissions:
+      contents: write
+      pull-requests: write
+    uses: ./.github/workflows/stage-release.yml
+    secrets: inherit
+  release-complete:
+    name: Release complete
+    needs: [required, release]
+    if: "!cancelled() && github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')"
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Reject skipped or failed publication and acceptance
+        env:
+          VERIFIED: ${{ needs.required.result }}
+          RELEASED: ${{ needs.release.result }}
+        run: test "$VERIFIED" = success && test "$RELEASED" = success
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97
+        with:
+          python-version-file: .python-version
+      - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6
+        with:
+          cosign-release: v3.1.3
+      - name: Verify published artifacts against the source and trusted key
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+          SOURCE_SHA: ${{ github.sha }}
+          COSIGN_PUBLIC_KEY_SHA256: ${{ vars.COSIGN_PUBLIC_KEY_SHA256 }}
+        run: bash scripts/release/verify-published.sh
+  generated-repair:
+    name: Repair generated conflicts
+    if: >-
+      github.event_name == 'pull_request_target'
+      || github.event_name == 'schedule'
+      || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    permissions:
+      contents: write
+      pull-requests: read
+    uses: ./.github/workflows/stage-repair.yml
