@@ -1,0 +1,111 @@
+{
+  "measurement": {
+    "base": "df10b10a7f7f204edb07c0306c1f4a6736125399",
+    "merge_base": "df10b10a7f7f204edb07c0306c1f4a6736125399",
+    "head": "291bf20e6894e82e97cb00a73b29e80e3e05be58",
+    "classifier": "Pygments 2.21.0",
+    "deltas": [
+      {
+        "before": ".github/workflows/ci.yml",
+        "after": ".github/workflows/ci.yml",
+        "added": 33,
+        "deleted": 1
+      },
+      {
+        "before": ".github/workflows/stage-build.yml",
+        "after": ".github/workflows/stage-build.yml",
+        "added": 8,
+        "deleted": 5
+      },
+      {
+        "before": ".github/workflows/stage-release.yml",
+        "after": ".github/workflows/stage-release.yml",
+        "added": 23,
+        "deleted": 2
+      },
+      {
+        "before": ".gitignore",
+        "after": ".gitignore",
+        "added": 2,
+        "deleted": 2
+      },
+      {
+        "before": "README.md",
+        "after": "README.md",
+        "added": 2,
+        "deleted": 0
+      },
+      {
+        "before": "SKILL.md",
+        "after": "SKILL.md",
+        "added": 6,
+        "deleted": 0
+      },
+      {
+        "before": "docs/assets/argivore-logo.png",
+        "after": "docs/assets/argivore-logo.png",
+        "added": null,
+        "deleted": null
+      },
+      {
+        "before": "docs/releases.md",
+        "after": "docs/releases.md",
+        "added": 24,
+        "deleted": 6
+      },
+      {
+        "before": "scripts/release/publish.sh",
+        "after": "scripts/release/publish.sh",
+        "added": 5,
+        "deleted": 3
+      },
+      {
+        "before": "scripts/release/verify-published.sh",
+        "after": "scripts/release/verify-published.sh",
+        "added": 4,
+        "deleted": 1
+      },
+      {
+        "before": "scripts/release/verify-registry.py",
+        "after": "scripts/release/verify-registry.py",
+        "added": 0,
+        "deleted": 61
+      },
+      {
+        "before": "tests/tooling/test_workflow_boundaries.py",
+        "after": "tests/tooling/test_workflow_boundaries.py",
+        "added": 47,
+        "deleted": 1
+      }
+    ],
+    "shares": [
+      {
+        "language": "Python",
+        "added": 47,
+        "deleted": 62
+      },
+      {
+        "language": "YAML",
+        "added": 64,
+        "deleted": 8
+      },
+      {
+        "language": "Markdown",
+        "added": 32,
+        "deleted": 6
+      },
+      {
+        "language": "Bash",
+        "added": 9,
+        "deleted": 4
+      },
+      {
+        "language": "Unknown",
+        "added": 2,
+        "deleted": 2
+      }
+    ]
+  },
+  "palette_sha256": "df3607dacd40a0c4dbfb4b0053752953f4b40d060401fe4e42a3d842f6a8a15c",
+  "matplotlib": "3.11.2"
+}
