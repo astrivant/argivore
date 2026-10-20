@@ -59,8 +59,6 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
-!scripts/coverage/
-!scripts/coverage/**
 *.lcov
 
 # nyc test coverage
@@ -350,5 +348,7 @@ pyrightconfig.json
 # END gitignore-template v1
 
 # BEGIN gitignore-custom v1
+!scripts/coverage/
+!scripts/coverage/**
 
 # END gitignore-custom v1
