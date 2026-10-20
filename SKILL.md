@@ -33,9 +33,3 @@ operations. Application argument builders and handlers remain ordinary Python
 code and own their effects. Reading this file does not authorize pushing,
 merging, creating secrets or publishing packages; follow explicit task authority
 and the [release contract](docs/releases.md).
-
-Artifact builds and signed releases use the shared
-[registry publication contract](docs/releases.md). Preserve PR/pipeline preview
-versions, exact built archive receipts, scoped credentials, and verified release
-bytes when changing CI. Activation depends on the provisioned registry and its
-client acceptance checks.

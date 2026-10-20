@@ -4,11 +4,8 @@ Keep privileged CI jobs separate from candidate code and verification-only event
 
 from __future__ import annotations
 
-import os
-import subprocess
 from pathlib import Path
 
-import pytest
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -87,7 +84,7 @@ def test_required_gate_covers_all_verification_producers() -> None:
     required = mapping(jobs["required"])
     producers = {"checks", "tests", "build"}
     needs = required["needs"]
-    assert isinstance(needs, list) and set(needs) == producers | {"registry-preview"}
+    assert isinstance(needs, list) and set(needs) == producers
     assert required["if"] == "always() && github.event_name != 'pull_request_target' && github.event_name != 'schedule'"
     for name in producers:
         job = mapping(jobs[name])
@@ -160,46 +157,3 @@ def test_release_verifier_requires_provider_immutability() -> None:
     source = (ROOT / "scripts/release/verify-published.sh").read_text()
     assert ".draft == false and .immutable == true" in source
     assert source.index(".immutable == true") < source.index("gh release download")
-
-
-@pytest.mark.parametrize("result", ["success", "failure", "cancelled", "skipped"])
-@pytest.mark.parametrize("enabled", [True, False])
-def test_registry_preview_is_required_only_for_eligible_events(result: str, enabled: bool) -> None:
-    """
-    Exercise the actual terminal shell with every preview publication outcome.
-
-    Args:
-        result (str): Registry publisher conclusion reported by the provider.
-        enabled (bool): Whether this trusted event requires preview publication.
-
-    Returns:
-        None: Eligible previews require success and other events require an intended skip.
-    """
-    jobs = mapping(workflow("ci")["jobs"])
-    publisher = mapping(jobs["registry-preview"])
-    needs = publisher["needs"]
-    assert isinstance(needs, list) and set(needs) == {"checks", "tests", "build"}
-    assert publisher["secrets"] == {"ARTIFACT_REGISTRY_CREDENTIALS": "${{ secrets.ARTIFACT_REGISTRY_CREDENTIALS }}"}
-    condition = str(publisher["if"])
-    assert "github.event_name == 'pull_request'" in condition
-    assert "github.event.pull_request.head.repo.full_name == github.repository" in condition
-    assert "github.ref == 'refs/heads/main'" in condition
-    steps = mapping(jobs["required"])["steps"]
-    assert isinstance(steps, list)
-    gate = mapping(steps[0])
-    completed = subprocess.run(
-        ["bash", "-e", "-c", str(gate["run"])],
-        check=False,
-        capture_output=True,
-        env={
-            **os.environ,
-            "CHECKS": "success",
-            "TESTS": "success",
-            "BUILD": "success",
-            "READINESS_REQUIRED": "false",
-            "READINESS": "skipped",
-            "REGISTRY": result,
-            "REGISTRY_REQUIRED": str(enabled).lower(),
-        },
-    )
-    assert (completed.returncode == 0) == (result == ("success" if enabled else "skipped"))

@@ -24,23 +24,9 @@ jobs:
   build:
     if: github.event_name != 'pull_request_target' && github.event_name != 'schedule'
     uses: ./.github/workflows/stage-build.yml
-  registry-preview:
-    needs: [checks, tests, build]
-    if: >-
-      !cancelled()
-      && needs.checks.result == 'success'
-      && needs.tests.result == 'success'
-      && needs.build.result == 'success'
-      && vars.ARTIFACT_REGISTRY_ENABLED == 'true' && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository))
-    uses: astrivant/astrivant/.github/workflows/stage-artifacts.yml@55c4ebd6cd8ed75e92ce8ab92de8e35e33a769eb
-    with:
-      source-sha: ${{ github.sha }}
-      python-artifact: distributions
-    secrets:
-      ARTIFACT_REGISTRY_CREDENTIALS: ${{ secrets.ARTIFACT_REGISTRY_CREDENTIALS }}
   required:
     name: Required CI
-    needs: [checks, tests, build, registry-preview]
+    needs: [checks, tests, build]
     if: always() && github.event_name != 'pull_request_target' && github.event_name != 'schedule'
     runs-on: ubuntu-latest
     timeout-minutes: 5
@@ -50,17 +36,10 @@ jobs:
           CHECKS: ${{ needs.checks.result }}
           TESTS: ${{ needs.tests.result }}
           BUILD: ${{ needs.build.result }}
-          REGISTRY: ${{ needs.registry-preview.result }}
-          REGISTRY_REQUIRED: ${{ vars.ARTIFACT_REGISTRY_ENABLED == 'true' && ((github.event_name == 'push' && github.ref == 'refs/heads/main') || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)) }}
         run: |
           for result in "$CHECKS" "$TESTS" "$BUILD"; do
             [ "$result" = success ] || exit 1
           done
-          if [ "$REGISTRY_REQUIRED" = true ]; then
-            [ "$REGISTRY" = success ] || exit 1
-          else
-            [ "$REGISTRY" = skipped ] || exit 1
-          fi
   coverage:
     needs: [tests]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -96,19 +75,8 @@ jobs:
       - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6
         with:
           cosign-release: v3.1.3
-      - name: Authenticate the scoped registry helper
-        id: registry
-        uses: astrivant/astrivant/.github/actions/artifacts@30d08d7f8fe39f1648162c2a5aa22cd18cdf3132
-        with:
-          operation: setup
-          authenticate: 'true'
-          credentials-json: ${{ secrets.ARTIFACT_REGISTRY_CREDENTIALS }}
       - name: Verify published artifacts against the source and trusted key
         env:
-          REGISTRY_PYTHON: ${{ steps.registry.outputs.python }}
-          REGISTRY_SCRIPT: ${{ steps.registry.outputs.script }}
-          REGISTRY_INFRASTRUCTURE: ${{ steps.registry.outputs.infrastructure }}
-          TWINE_PASSWORD: ${{ steps.registry.outputs.access-token }}
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
           SOURCE_SHA: ${{ github.sha }}

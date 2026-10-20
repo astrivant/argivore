@@ -12,10 +12,11 @@ jobs:
         with:
           persist-credentials: false
       - uses: ./.github/actions/setup
-      - name: Prepare the version from the source and pipeline
-        uses: astrivant/astrivant/.github/actions/artifacts@30d08d7f8fe39f1648162c2a5aa22cd18cdf3132
-        with:
-          operation: prepare
+      - name: Derive a release version from the immutable tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: poetry run python scripts/release/version.py "$RELEASE_TAG"
       - run: poetry build
       - run: poetry run twine check --strict dist/*
       # Reproduce the acceptance host: no attrs or source package is installed there.
@@ -23,10 +24,6 @@ jobs:
         run: |
           python -m venv "$RUNNER_TEMP/argivore-verifier"
           "$RUNNER_TEMP/argivore-verifier/bin/python" scripts/ci/check-distribution.py dist
-      - name: Bind tested archives to their source and pipeline
-        uses: astrivant/astrivant/.github/actions/artifacts@30d08d7f8fe39f1648162c2a5aa22cd18cdf3132
-        with:
-          operation: collect-python
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         with:
           name: distributions
