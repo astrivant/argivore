@@ -2,7 +2,7 @@ name: Signed release
 on:
   workflow_call:
     secrets:
-      PYPI_API_TOKEN:
+      ARTIFACT_REGISTRY_CREDENTIALS:
         required: false
       COSIGN_PRIVATE_KEY:
         required: false
@@ -44,12 +44,22 @@ jobs:
           script: |
             const operation = require('./scripts/release/feedback.cjs');
             await operation({github, context, core});
+      - name: Authenticate the scoped registry helper
+        id: registry
+        uses: astrivant/astrivant/.github/actions/artifacts@30d08d7f8fe39f1648162c2a5aa22cd18cdf3132
+        with:
+          operation: setup
+          authenticate: 'true'
+          credentials-json: ${{ secrets.ARTIFACT_REGISTRY_CREDENTIALS }}
       - name: Sign, verify and publish the tested distribution
         env:
+          REGISTRY_PYTHON: ${{ steps.registry.outputs.python }}
+          REGISTRY_SCRIPT: ${{ steps.registry.outputs.script }}
+          REGISTRY_INFRASTRUCTURE: ${{ steps.registry.outputs.infrastructure }}
+          TWINE_PASSWORD: ${{ steps.registry.outputs.access-token }}
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}
           SOURCE_SHA: ${{ github.sha }}
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
           COSIGN_PRIVATE_KEY: ${{ secrets.COSIGN_PRIVATE_KEY }}
           COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
           COSIGN_PUBLIC_KEY_SHA256: ${{ vars.COSIGN_PUBLIC_KEY_SHA256 }}
@@ -74,8 +84,19 @@ jobs:
       - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6
         with:
           cosign-release: v3.1.3
+      - name: Authenticate the scoped registry helper
+        id: registry
+        uses: astrivant/astrivant/.github/actions/artifacts@30d08d7f8fe39f1648162c2a5aa22cd18cdf3132
+        with:
+          operation: setup
+          authenticate: 'true'
+          credentials-json: ${{ secrets.ARTIFACT_REGISTRY_CREDENTIALS }}
       - name: Require verified published outputs
         env:
+          REGISTRY_PYTHON: ${{ steps.registry.outputs.python }}
+          REGISTRY_SCRIPT: ${{ steps.registry.outputs.script }}
+          REGISTRY_INFRASTRUCTURE: ${{ steps.registry.outputs.infrastructure }}
+          TWINE_PASSWORD: ${{ steps.registry.outputs.access-token }}
           PUBLISH_RESULT: ${{ needs.publish.result }}
           GH_TOKEN: ${{ github.token }}
           RELEASE_TAG: ${{ github.ref_name }}

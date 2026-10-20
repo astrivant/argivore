@@ -4,6 +4,7 @@ set -euo pipefail
 set +x
 umask 077
 : "${GITHUB_REPOSITORY:?}" "${RELEASE_TAG:?}" "${SOURCE_SHA:?}" "${COSIGN_PUBLIC_KEY_SHA256:?}"
+: "${REGISTRY_PYTHON:?}" "${REGISTRY_SCRIPT:?}" "${REGISTRY_INFRASTRUCTURE:?}"
 : "${COSIGN_PRIVATE_KEY:?}" "${COSIGN_PASSWORD:?}" "${TWINE_PASSWORD:?}"
 
 directory="$(mktemp -d)"
@@ -24,7 +25,7 @@ if [ "$release_state" = false ]; then
     bash scripts/release/verify-published.sh
     exit 0
 fi
-cp dist/*.whl dist/*.tar.gz "$directory/"
+cp dist/*.whl dist/*.tar.gz dist/artifact-provenance.json "$directory/"
 python scripts/release/attest.py prepare --directory "$directory" --tag "$RELEASE_TAG" --source "$SOURCE_SHA" --fingerprint "$COSIGN_PUBLIC_KEY_SHA256"
 if [ -z "$release_state" ]; then
     gh release create "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --verify-tag --draft --title "Argivore $RELEASE_TAG" --notes-file "$RUNNER_TEMP/release-notes.md"
@@ -43,6 +44,7 @@ python scripts/release/upload.py "$directory"
 mkdir "$directory/download"
 gh release download "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --dir "$directory/download"
 python scripts/release/attest.py verify --directory "$directory/download" --tag "$RELEASE_TAG" --source "$SOURCE_SHA" --fingerprint "$COSIGN_PUBLIC_KEY_SHA256"
-TWINE_USERNAME=__token__ poetry run twine upload --non-interactive --skip-existing dist/*.whl dist/*.tar.gz
-python scripts/release/verify-registry.py dist "$RELEASE_TAG"
+"$REGISTRY_PYTHON" "$REGISTRY_SCRIPT" artifacts publish python \
+    --directory dist --receipt dist/artifact-provenance.json --source-sha "$SOURCE_SHA" \
+    --infrastructure "$REGISTRY_INFRASTRUCTURE"
 gh release edit "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --draft=false
